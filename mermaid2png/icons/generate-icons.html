@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate Extension Icons</title>
+</head>
+<body>
+  <h1>Generate Extension Icons</h1>
+  <p>Click the buttons below to generate and download icons.</p>
+  
+  <canvas id="canvas" style="display: none;"></canvas>
+  
+  <div>
+    <button onclick="generateIcon(16)">Generate 16x16 icon</button>
+    <button onclick="generateIcon(48)">Generate 48x48 icon</button>
+    <button onclick="generateIcon(128)">Generate 128x128 icon</button>
+  </div>
+  
+  <script>
+    function generateIcon(size) {
+      const canvas = document.getElementById('canvas');
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      
+      // Gradient background (green theme for mermaid)
+      const gradient = ctx.createLinearGradient(0, 0, size, size);
+      gradient.addColorStop(0, '#10b981');
+      gradient.addColorStop(1, '#059669');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, size, size);
+      
+      // Draw "M" text (for Mermaid)
+      ctx.fillStyle = 'white';
+      ctx.font = `bold ${size * 0.5}px Arial`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('M', size / 2, size / 2 - size * 0.05);
+      
+      // Draw "PNG" text below
+      ctx.font = `bold ${size * 0.2}px Arial`;
+      ctx.fillText('PNG', size / 2, size / 2 + size * 0.2);
+      
+      // Download
+      canvas.toBlob(function(blob) {
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `icon${size}.png`;
+        a.click();
+        URL.revokeObjectURL(url);
+      });
+    }
+  </script>
+</body>
+</html>
+

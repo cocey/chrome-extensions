@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MD to PDF Converter</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Markdown to PDF</h1>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-button active" data-tab="web">From Web Page</button>
+      <button class="tab-button" data-tab="file">From File</button>
+      <button class="tab-button" data-tab="manual">Manual Input</button>
+    </div>
+
+    <div class="tab-content active" id="web-tab">
+      <div class="input-section">
+        <p>Extract markdown from the current web page (GitHub, GitLab, etc.)</p>
+        <button id="extract-btn" class="primary-btn">Extract Markdown</button>
+        <div id="web-status" class="status-message"></div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="file-tab">
+      <div class="input-section">
+        <label for="file-input" class="file-label">
+          <span>Choose Markdown File</span>
+          <input type="file" id="file-input" accept=".md,.markdown,.txt" />
+        </label>
+        <div id="file-status" class="status-message"></div>
+      </div>
+    </div>
+
+    <div class="tab-content" id="manual-tab">
+      <div class="input-section">
+        <textarea id="manual-input" placeholder="Paste your markdown here..."></textarea>
+        <div id="manual-status" class="status-message"></div>
+      </div>
+    </div>
+
+    <div class="preview-section" id="preview-section" style="display: none;">
+      <h3>Preview</h3>
+      <div id="preview-content" class="preview-content"></div>
+    </div>
+
+    <div class="actions">
+      <button id="generate-pdf-btn" class="primary-btn" disabled>Generate PDF</button>
+      <button id="clear-btn" class="secondary-btn">Clear</button>
+    </div>
+
+    <div id="error-message" class="error-message" style="display: none;"></div>
+  </div>
+
+  <script src="../lib/marked.min.js"></script>
+  <script src="../lib/jspdf.umd.min.js"></script>
+  <script src="../lib/html2canvas.min.js"></script>
+  <script src="../lib/pdf-generator.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
+

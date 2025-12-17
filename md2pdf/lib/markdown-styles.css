@@ -1,0 +1,137 @@
+/* Markdown styles for PDF generation */
+
+.markdown-pdf {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  font-size: 12pt;
+  line-height: 1.6;
+  color: #333;
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 20mm;
+}
+
+.markdown-pdf h1,
+.markdown-pdf h2,
+.markdown-pdf h3,
+.markdown-pdf h4,
+.markdown-pdf h5,
+.markdown-pdf h6 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #333;
+}
+
+.markdown-pdf h1 {
+  font-size: 28px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.markdown-pdf h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 8px;
+}
+
+.markdown-pdf h3 {
+  font-size: 20px;
+}
+
+.markdown-pdf h4 {
+  font-size: 18px;
+}
+
+.markdown-pdf h5 {
+  font-size: 16px;
+}
+
+.markdown-pdf h6 {
+  font-size: 14px;
+}
+
+.markdown-pdf p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+.markdown-pdf ul,
+.markdown-pdf ol {
+  margin-left: 20px;
+  margin-bottom: 12px;
+}
+
+.markdown-pdf li {
+  margin-bottom: 6px;
+  line-height: 1.6;
+}
+
+.markdown-pdf code {
+  background: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 11pt;
+  color: #e83e8c;
+}
+
+.markdown-pdf pre {
+  background: #282c34;
+  color: #abb2bf;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin-bottom: 15px;
+  font-family: 'Monaco', 'Courier New', monospace;
+  font-size: 10pt;
+}
+
+.markdown-pdf pre code {
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+.markdown-pdf blockquote {
+  border-left: 4px solid #667eea;
+  padding-left: 15px;
+  margin-left: 0;
+  color: #666;
+  font-style: italic;
+}
+
+.markdown-pdf table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.markdown-pdf table th,
+.markdown-pdf table td {
+  border: 1px solid #e0e0e0;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.markdown-pdf table th {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+.markdown-pdf a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.markdown-pdf img {
+  max-width: 100%;
+  height: auto;
+  margin: 15px 0;
+}
+
+.markdown-pdf hr {
+  border: none;
+  border-top: 2px solid #e0e0e0;
+  margin: 20px 0;
+}
+
